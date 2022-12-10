@@ -232,7 +232,7 @@ logical
 - You can check for the lenght of vector using the `length()` function.
 ```{r}
 names <- c("Joy","John","Jamal")
-lenght(names)
+length(names)
 ```
 - You can sort a vector with the `sort()` function.
 ```{r}
@@ -345,11 +345,74 @@ an_array[5,2,2]
 dim(an_array)
 ```
 
-
-
 ## Data Frames
+- Data Frames are data displayed in tabular format
+- A data frame consists of columns of different data types, but each column contain values of the same data types.
+- Data frames can be created with the `data.frame()` function.
+```{r}
+workers <- data.frame(
+  name = c("Joy","John","Rebecca"),
+  age = c(43,21,45),
+  married = c(TRUE,FALSE, FALSE)
+)
+workers
+```
+- You can summarize a data frame using the `summary()` function
+```{r}
+summary(workers)
+```
+- Items in a dataframe can be assigned with square brackets `[]`,double brackets`[[]]` or dollar signs`$`.
+```{r}
+workers[2]
+workers[["married"]]
+workers$name
+workers
+```
+- You can add new rows and columns to the data using the `rbind()` and `cbind()` functions respectively.
+```{r}
+#add another worker
+new_workers_data <- rbind(workers, c("Johnson",49,FALSE))
+new_workers_data
+#add another variable
+new_workers_var <- cbind(workers, Children = c(5,1,8))
+new_workers_var
+```
+- Rows can be removed with negative indexing
+```{r}
+new_workers_var[-3,-2]
+```
+- You can combine two dataframes with the `cbind()` function
+```{r}
+# combine by row
+cbind(new_workers_data, new_workers_data)
+#combine by columns
+rbind(new_workers_data, new_workers_data)
+```
 
 ## Factors
+- Factors are used on categorical data
+- Examples of factors are Sex - Male/Female, Yes/No,
+- Factors can be created using the `factor()` function
+```{r}
+sex <- factor(c("Male","Female","Female","Female"))
+sex
+```
+- You can get the levels using the `levels()` function
+```{r}
+levels(sex)
+```
+- You can set the levels using the levels argument in the `factor()`
+```{r}
+Marital_Status <- factor(c("Married","Divorced","Single"))
+levels(Marital_Status)
+```
+
+- Factors can be accessed and changed using the square brackets
+```{r}
+Marital_Status[2]
+Marital_Status[-1]
+```
+
 
 # Importing and Exporting Data
 
