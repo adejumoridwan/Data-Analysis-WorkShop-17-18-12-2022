@@ -5,14 +5,6 @@ date: "`r Sys.Date()`"
 output: pdf_document
 ---
 
-# Why R?
-
-# Installing R and R Studio
-
-# Setting Up and Customizing R Studio IDE
-
-# File and Project Structure 
-
 # R Variables
 - You can take variables as containers for storing values of data.  
 - Variables are created using the assignment operator `<-`.  
@@ -21,7 +13,7 @@ output: pdf_document
 country <- "Nigeria"
 age <- 62
 ```
-- Text values are surrounded by double or single quotes while numeric not surrounded by any quotes.  
+- Text values are surrounded by double or single quotes while numeric are not surrounded by quotes.  
 - The values of variables are called by calling the name of the variables.  
 ```{r}
 country
@@ -69,6 +61,15 @@ country.6 = "Algeria"
 #variable@12 <- "Madagascar"
 #FALSE <- "Ghana"
 ```
+
+##Comments
+- Comments are used in explaining blocks of code
+- They are usually lines ignored anytime an R script is executed and begins with a `#`
+```{r}
+#This is a comment
+This is not a comment
+```
+
 
 
 # Arithmetic and Logical Operations in R
@@ -412,11 +413,3 @@ levels(Marital_Status)
 Marital_Status[2]
 Marital_Status[-1]
 ```
-
-
-# Importing and Exporting Data
-
-# Cleaning Data 
-
-# Analyzing and Visualizing data
-# Reporting in R
